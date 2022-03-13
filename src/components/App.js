@@ -281,7 +281,12 @@ function App() {
         {state &&
           states.map((ele) => {
             if (ele.name === state) {
-              return <div>{ele.description}</div>;
+              return (
+                <>
+                  <div id="state-name">{ele.name}</div>
+                  <div id="state-description">{ele.description}</div>
+                </>
+              );
             }
           })}
         {cit &&
@@ -289,7 +294,12 @@ function App() {
             if (ele.name === state) {
               return ele.city.map((ele) => {
                 if (ele.name === cit) {
-                  return <div>{ele.description}</div>;
+                  return (
+                    <>
+                      <div>{ele.name}</div>
+                      <div>{ele.description}</div>
+                    </>
+                  );
                 }
               });
             }
@@ -301,7 +311,12 @@ function App() {
                 if (ele.name === cit) {
                   return ele.landmarks.map((ele) => {
                     if (ele.name === landmarks) {
-                      return <div>{ele.description}</div>;
+                      return (
+                        <>
+                          <div>{ele.name}</div>
+                          <div>{ele.description}</div>
+                        </>
+                      );
                     }
                   });
                 }
