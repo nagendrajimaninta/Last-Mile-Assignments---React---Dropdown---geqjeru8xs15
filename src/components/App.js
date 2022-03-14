@@ -233,8 +233,8 @@ function App() {
             setState(e.target.value);
           }}
         >
-          {states.map((ele) => {
-            return <option>{ele.name}</option>;
+          {states.map((ele,index) => {
+            return <option value={index}>{ele.name}</option>;
           })}
         </select>
         {state &&
@@ -247,9 +247,9 @@ function App() {
                     setCity(e.target.value);
                   }}
                 >
-                  {ele.city.map((ele) => {
+                  {ele.city.map((ele,index) => {
                     console.log(ele);
-                    return <option>{ele.name}</option>;
+                    return <option value={index}>{ele.name}</option>;
                   })}
                 </select>
               );
@@ -267,8 +267,8 @@ function App() {
                         setLandmarks(e.target.value);
                       }}
                     >
-                      {ele.landmarks.map((ele) => {
-                        return <option>{ele.name}</option>;
+                      {ele.landmarks.map((ele,index) => {
+                        return <option value={index}>{ele.name}</option>;
                       })}
                     </select>
                   );
@@ -296,8 +296,8 @@ function App() {
                 if (ele.name === cit) {
                   return (
                     <>
-                      <div>{ele.name}</div>
-                      <div>{ele.description}</div>
+                      <div id="city-name">{ele.name}</div>
+                      <div id="city-description">{ele.description}</div>
                     </>
                   );
                 }
@@ -313,8 +313,8 @@ function App() {
                     if (ele.name === landmarks) {
                       return (
                         <>
-                          <div>{ele.name}</div>
-                          <div>{ele.description}</div>
+                          <div id="landmark-name ">{ele.name}</div>
+                          <div id="landmark-description">{ele.description}</div>
                         </>
                       );
                     }
